@@ -77,14 +77,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Vero Scalp — Premium Scalp Micro Pigmentation Studio" },
+      { name: "description", content: "Award-winning scalp micro pigmentation studio. Non-surgical hairline restoration with medical-grade precision." },
+      { name: "author", content: "Vero Scalp" },
+      { property: "og:title", content: "Vero Scalp — Premium SMP Studio" },
+      { property: "og:description", content: "Non-surgical hairline restoration delivered by master technicians." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {
