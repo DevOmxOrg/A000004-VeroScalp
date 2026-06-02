@@ -155,7 +155,7 @@ function Index() {
                   width={1024}
                   height={768}
                   loading="lazy"
-                  style={{ objectPosition: "50% 80%" }}
+                  style={{ objectPosition: "50% 90%" }}
                   className="w-full aspect-[4/3] object-cover outline outline-1 -outline-offset-1 outline-black/5"
                 />
                 <div className="flex justify-between text-[10px] uppercase tracking-widest text-brand-muted font-medium">
