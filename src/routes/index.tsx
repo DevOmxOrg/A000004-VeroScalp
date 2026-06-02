@@ -138,7 +138,7 @@ function Index() {
                   className="w-full aspect-[4/3] object-cover outline outline-1 -outline-offset-1 outline-black/5"
                 />
                 <div className="flex justify-between text-[10px] uppercase tracking-widest text-brand-muted font-medium">
-                  <span>Session 0</span>
+                  <span>Session 1</span>
                   <span>Initial State</span>
                 </div>
               </div>
