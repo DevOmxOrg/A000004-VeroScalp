@@ -1,10 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useRef } from "react";
 import client1 from "@/assets/client-1.jpg.asset.json";
 import client2 from "@/assets/client-2.jpg.asset.json";
+import studio1 from "@/assets/studio-1.jpg.asset.json";
+import studio2 from "@/assets/studio-2.jpg.asset.json";
+import studio3 from "@/assets/studio-3.jpg.asset.json";
+import studio4 from "@/assets/studio-4.jpg.asset.json";
+import studio5 from "@/assets/studio-5.jpg.asset.json";
+import studio6 from "@/assets/studio-6.jpg.asset.json";
+import studio7 from "@/assets/studio-7.jpg.asset.json";
 
 const heroPortrait = client2.url;
 const beforeSmp = client1.url;
 const afterSmp = client2.url;
+
+const studioImages = [studio1, studio2, studio3, studio4, studio5, studio6, studio7];
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -35,6 +45,15 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (dir: "left" | "right") => {
+    const el = carouselRef.current;
+    if (!el) return;
+    const amount = el.clientWidth * 0.8;
+    el.scrollBy({ left: dir === "left" ? -amount : amount, behavior: "smooth" });
+  };
+
   return (
     <div className="font-sans text-brand-dark bg-brand-bg antialiased min-h-screen">
       <header className="sticky top-0 z-50 bg-brand-bg/80 backdrop-blur-md border-b border-slate-100">
@@ -93,6 +112,7 @@ function Index() {
                 alt="Side profile of a man with a sharply defined SMP hairline"
                 width={1024}
                 height={1280}
+                style={{ objectPosition: "50% 80%" }}
                 className="w-full aspect-[4/5] object-cover rounded-sm outline outline-1 -outline-offset-1 outline-black/5"
               />
               <div className="absolute -bottom-8 -left-8 bg-white p-6 shadow-xl max-w-[260px] border border-slate-100 hidden md:block">
@@ -101,7 +121,7 @@ function Index() {
                   indistinguishable from real hair follicles."
                 </p>
                 <p className="text-[10px] uppercase tracking-widest mt-4 font-semibold text-brand-muted">
-                  — Marcus T.
+                  — Diego
                 </p>
               </div>
             </div>
@@ -117,7 +137,7 @@ function Index() {
                   Undetectable Artistry
                 </h2>
                 <p className="text-brand-muted leading-relaxed">
-                  Our specialized technique replicates individual hair follicles
+                  Our specialised technique replicates individual hair follicles
                   using proprietary pigments matched precisely to your natural
                   hair shade and skin tone.
                 </p>
@@ -135,6 +155,7 @@ function Index() {
                   width={1024}
                   height={768}
                   loading="lazy"
+                  style={{ objectPosition: "50% 80%" }}
                   className="w-full aspect-[4/3] object-cover outline outline-1 -outline-offset-1 outline-black/5"
                 />
                 <div className="flex justify-between text-[10px] uppercase tracking-widest text-brand-muted font-medium">
@@ -149,6 +170,7 @@ function Index() {
                   width={1024}
                   height={768}
                   loading="lazy"
+                  style={{ objectPosition: "50% 80%" }}
                   className="w-full aspect-[4/3] object-cover outline outline-1 -outline-offset-1 outline-black/5"
                 />
                 <div className="flex justify-between text-[10px] uppercase tracking-widest text-brand-muted font-medium">
@@ -211,7 +233,7 @@ function Index() {
             <div className="grid grid-cols-2 gap-6">
               {[
                 { label: "Procedures", value: "500+" },
-                { label: "Years Practicing", value: "10" },
+                { label: "Years Practising", value: "10" },
                 { label: "5-Star Reviews", value: "320" },
                 { label: "Avg. Sessions", value: "3" },
               ].map((stat) => (
@@ -220,6 +242,57 @@ function Index() {
                   <div className="text-[10px] uppercase tracking-widest text-brand-muted font-medium">
                     {stat.label}
                   </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Studio Carousel */}
+          <div className="max-w-7xl mx-auto px-6 lg:px-8 mt-20">
+            <div className="flex items-end justify-between mb-8 gap-6">
+              <div>
+                <span className="text-[10px] font-medium uppercase tracking-[0.25em] text-brand-muted mb-3 block">
+                  Inside The Studio
+                </span>
+                <h3 className="text-2xl md:text-3xl font-serif italic">
+                  Where the craft happens.
+                </h3>
+              </div>
+              <div className="hidden md:flex gap-3">
+                <button
+                  type="button"
+                  onClick={() => scroll("left")}
+                  aria-label="Previous"
+                  className="w-11 h-11 border border-brand-dark flex items-center justify-center hover:bg-brand-dark hover:text-white transition-all"
+                >
+                  ←
+                </button>
+                <button
+                  type="button"
+                  onClick={() => scroll("right")}
+                  aria-label="Next"
+                  className="w-11 h-11 border border-brand-dark flex items-center justify-center hover:bg-brand-dark hover:text-white transition-all"
+                >
+                  →
+                </button>
+              </div>
+            </div>
+            <div
+              ref={carouselRef}
+              className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 -mx-6 px-6 lg:-mx-8 lg:px-8 scroll-smooth"
+              style={{ scrollbarWidth: "thin" }}
+            >
+              {studioImages.map((img, i) => (
+                <div
+                  key={i}
+                  className="snap-start shrink-0 w-[78%] sm:w-[55%] md:w-[42%] lg:w-[32%]"
+                >
+                  <img
+                    src={img.url}
+                    alt={`Vero Scalp studio ${i + 1}`}
+                    loading="lazy"
+                    className="w-full aspect-[4/5] object-cover outline outline-1 -outline-offset-1 outline-black/5"
+                  />
                 </div>
               ))}
             </div>
