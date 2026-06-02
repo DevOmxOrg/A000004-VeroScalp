@@ -1,7 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import heroPortrait from "@/assets/hero-portrait.jpg";
-import beforeSmp from "@/assets/before-smp.jpg";
-import afterSmp from "@/assets/after-smp.jpg";
+import client1 from "@/assets/client-1.jpg.asset.json";
+import client2 from "@/assets/client-2.jpg.asset.json";
+
+const heroPortrait = client2.url;
+const beforeSmp = client1.url;
+const afterSmp = client2.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
