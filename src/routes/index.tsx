@@ -112,7 +112,7 @@ function Index() {
                 alt="Side profile of a man with a sharply defined SMP hairline"
                 width={1024}
                 height={1280}
-                style={{ objectPosition: "50% 80%" }}
+                style={{ objectPosition: "50% 70%" }}
                 className="w-full aspect-[4/5] object-cover rounded-sm outline outline-1 -outline-offset-1 outline-black/5"
               />
               <div className="absolute -bottom-8 -left-8 bg-white p-6 shadow-xl max-w-[260px] border border-slate-100 hidden md:block">
@@ -155,7 +155,7 @@ function Index() {
                   width={1024}
                   height={768}
                   loading="lazy"
-                  style={{ objectPosition: "50% 80%" }}
+                  style={{ objectPosition: "50% 90%" }}
                   className="w-full aspect-[4/3] object-cover outline outline-1 -outline-offset-1 outline-black/5"
                 />
                 <div className="flex justify-between text-[10px] uppercase tracking-widest text-brand-muted font-medium">
@@ -170,7 +170,7 @@ function Index() {
                   width={1024}
                   height={768}
                   loading="lazy"
-                  style={{ objectPosition: "50% 80%" }}
+                  style={{ objectPosition: "50% 90%" }}
                   className="w-full aspect-[4/3] object-cover outline outline-1 -outline-offset-1 outline-black/5"
                 />
                 <div className="flex justify-between text-[10px] uppercase tracking-widest text-brand-muted font-medium">
