@@ -1,18 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useRef } from "react";
-import client1 from "@/assets/client-1.jpg.asset.json";
-import client2 from "@/assets/client-2.jpg.asset.json";
-import studio1 from "@/assets/studio-1.jpg.asset.json";
-import studio2 from "@/assets/studio-2.jpg.asset.json";
-import studio3 from "@/assets/studio-3.jpg.asset.json";
-import studio4 from "@/assets/studio-4.jpg.asset.json";
-import studio5 from "@/assets/studio-5.jpg.asset.json";
-import studio6 from "@/assets/studio-6.jpg.asset.json";
-import studio7 from "@/assets/studio-7.jpg.asset.json";
+import client1 from "@/assets/client-1.jpg";
+import client2 from "@/assets/client-2.jpg";
+import studio1 from "@/assets/studio-1.jpg";
+import studio2 from "@/assets/studio-2.jpg";
+import studio3 from "@/assets/studio-3.jpg";
+import studio4 from "@/assets/studio-4.jpg";
+import studio5 from "@/assets/studio-5.jpg";
+import studio6 from "@/assets/studio-6.jpg";
+import studio7 from "@/assets/studio-7.jpg";
 
-const heroPortrait = client2.url;
-const beforeSmp = client1.url;
-const afterSmp = client2.url;
+const heroPortrait = client2;
+const beforeSmp = client1;
+const afterSmp = client2;
 
 const studioImages = [studio1, studio2, studio3, studio4, studio5, studio6, studio7];
 
@@ -112,7 +112,7 @@ function Index() {
                 alt="Side profile of a man with a sharply defined SMP hairline"
                 width={1024}
                 height={1280}
-                style={{ objectPosition: "50% 70%" }}
+                style={{ objectPosition: "50% 60%" }}
                 className="w-full aspect-[4/5] object-cover rounded-sm outline outline-1 -outline-offset-1 outline-black/5"
               />
               <div className="absolute -bottom-8 -left-8 bg-white p-6 shadow-xl max-w-[260px] border border-slate-100 hidden md:block">
@@ -155,8 +155,8 @@ function Index() {
                   width={1024}
                   height={768}
                   loading="lazy"
-                  style={{ objectPosition: "50% 90%" }}
-                  className="w-full aspect-[4/3] object-cover outline outline-1 -outline-offset-1 outline-black/5"
+                  style={{ objectPosition: "50% 47%" }}
+                  className="w-full aspect-[4/5] object-cover outline outline-1 -outline-offset-1 outline-black/5"
                 />
                 <div className="flex justify-between text-[10px] uppercase tracking-widest text-brand-muted font-medium">
                   <span>Session 1</span>
@@ -170,8 +170,8 @@ function Index() {
                   width={1024}
                   height={768}
                   loading="lazy"
-                  style={{ objectPosition: "50% 90%" }}
-                  className="w-full aspect-[4/3] object-cover outline outline-1 -outline-offset-1 outline-black/5"
+                  style={{ objectPosition: "50% 47%" }}
+                  className="w-full aspect-[4/5] object-cover outline outline-1 -outline-offset-1 outline-black/5"
                 />
                 <div className="flex justify-between text-[10px] uppercase tracking-widest text-brand-muted font-medium">
                   <span>Session 3</span>
@@ -288,7 +288,7 @@ function Index() {
                   className="snap-start shrink-0 w-[78%] sm:w-[55%] md:w-[42%] lg:w-[32%]"
                 >
                   <img
-                    src={img.url}
+                    src={img}
                     alt={`Vero Scalp studio ${i + 1}`}
                     loading="lazy"
                     className="w-full aspect-[4/5] object-cover outline outline-1 -outline-offset-1 outline-black/5"
@@ -352,9 +352,9 @@ function Index() {
             © 2024 Vero SMP Studio — Premium Aesthetic Solutions
           </div>
           <div className="flex gap-6 text-[10px] uppercase tracking-widest">
-            <a href="#" className="hover:text-brand-dark transition-colors">Privacy</a>
-            <a href="#" className="hover:text-brand-dark transition-colors">Terms</a>
-            <a href="#" className="hover:text-brand-dark transition-colors">Instagram</a>
+            <a href="mailto:hello@veroscalp.com?subject=Privacy%20Policy%20Request" className="hover:text-brand-dark transition-colors">Privacy</a>
+            <a href="mailto:hello@veroscalp.com?subject=Terms%20of%20Service%20Request" className="hover:text-brand-dark transition-colors">Terms</a>
+            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-brand-dark transition-colors">Instagram</a>
           </div>
         </div>
       </footer>
